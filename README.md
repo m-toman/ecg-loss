@@ -1,2 +1,7 @@
 # ecg-loss
-e-contaminated Gausssian distribution loss for Keras with Tensorflow backend
+Tensorflow implementation for ε-contaminated Gausssian distribution loss with Tensorflow, Keras-compatible.
+
+# References
+J. Tukey, “A survey of sampling from contaminated distributions,”
+Contributions to probability and statistics, vol. 2, pp. 448–485,
+1960.
