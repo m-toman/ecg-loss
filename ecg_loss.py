@@ -45,8 +45,8 @@ def ecg_loss_np(y_true, y_pred, ecg_c=10.0, ecg_epsilon=0.1):
 # Compares results of the numpy and tensorflow implementations
 if __name__ == "__main__":
     with tf.Session() as sess:
-        y_true = np.random.rand(50, 100)
-        y_pred = np.random.rand(50, 100)
+        y_true = np.random.rand(50, 10)
+        y_pred = np.random.rand(50, 10)
         loss_np = ecg_loss_np(y_true, y_pred)
         print(loss_np)
 
