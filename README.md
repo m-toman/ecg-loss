@@ -1,5 +1,5 @@
 # ecg-loss
-Tensorflow implementation for ε-contaminated Gausssian distribution loss with Tensorflow, Keras-compatible.
+Keras-compatible Tensorflow implementation for ε-contaminated Gausssian distribution loss.
 
 ## Usage
 
