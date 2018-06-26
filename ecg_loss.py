@@ -11,7 +11,7 @@ import numpy as np
 from scipy.stats import multivariate_normal
 
 
-def get_ecg_loss(ecg_c=10.0, ecg_epsilon=0.1):
+def get_ecg_loss_func(ecg_c=10.0, ecg_epsilon=0.1):
     """ Returns a function with two parameters y_true and y_pred with parameters
         ecg_c and ecg_epsilon fixed (captured by closure).
         This allows usage with Keras as: model.compile(loss=get_ecg_loss(5.0, 0.2)).
@@ -51,7 +51,7 @@ if __name__ == "__main__":
 
         y_true_tf = tf.placeholder(tf.float32, y_true.shape)
         y_pred_tf = tf.placeholder(tf.float32, y_pred.shape)
-        loss_tf = get_ecg_loss()(y_true_tf, y_pred_tf)
+        loss_tf = get_ecg_loss_func()(y_true_tf, y_pred_tf)
 
         loss_tf_result = sess.run(loss_tf,
                                   feed_dict={y_true_tf: y_true,
