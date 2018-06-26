@@ -12,9 +12,9 @@ from scipy.stats import multivariate_normal
 
 
 def get_ecg_loss_func(ecg_c=10.0, ecg_epsilon=0.1):
-    """ Returns a function with two parameters y_true and y_pred with parameters
-        ecg_c and ecg_epsilon fixed (captured by closure).
-        This allows usage with Keras as: model.compile(loss=get_ecg_loss(5.0, 0.2)).
+    """ Returns a function with two parameters (y_true and y_pred)
+        and parameters ecg_c and ecg_epsilon captured by closure.
+        This allows usage with Keras as: model.compile(loss=get_ecg_loss_func(5.0, 0.2)).
     """
     def ecg_loss(y_true, y_pred):
         num_dims = y_pred.get_shape().as_list()[1]
@@ -42,10 +42,11 @@ def ecg_loss_np(y_true, y_pred, ecg_c=10.0, ecg_epsilon=0.1):
     return np.mean(losses)
 
 
+# Compares results of the numpy and tensorflow implementations
 if __name__ == "__main__":
     with tf.Session() as sess:
-        y_true = np.random.rand(5, 10)
-        y_pred = np.random.rand(5, 10)
+        y_true = np.random.rand(50, 100)
+        y_pred = np.random.rand(50, 100)
         loss_np = ecg_loss_np(y_true, y_pred)
         print(loss_np)
 
