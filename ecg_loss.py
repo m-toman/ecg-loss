@@ -1,8 +1,8 @@
 """ Implementation of e-contaminated Gaussian distribution loss
  to be used with Tensorflow or Keras with Tensorflow backend.
 
- J. Tukey, “A survey of sampling from contaminated distributions,”
- Contributions to probability and statistics, vol. 2, pp. 448–485, 1960.
+ J. Tukey, "A survey of sampling from contaminated distributions"
+ Contributions to probability and statistics, vol. 2, pp. 448-485, 1960.
 """
 
 import tensorflow as tf
